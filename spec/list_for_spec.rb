@@ -35,10 +35,11 @@ describe 'ListFor' do
                         :scopes => ["admin", "manager", "visitor"],
                         :birthday => nil, :created_at => Time.now, :updated_at => Date.today)
       @users = [@user1]
+      @output = list_for(@users)
     end
 
     it 'should print a table' do
-      list_for(@users).should == '<table></table>'
+      @output.should have_tag('table')
     end
 
   end

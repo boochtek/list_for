@@ -17,9 +17,10 @@ Gem::Specification.new do |s|
   s.add_dependency 'actionpack',        '~> 3.0.3'
   s.add_dependency 'activesupport',     '~> 3.0.3'
 
-  s.add_development_dependency 'rake',  '~> 0.8.7'
-  s.add_development_dependency 'rspec', '~> 2.4.0'
-  #s.add_development_dependency 'rr',    '~> 1.0.2'
+  s.add_development_dependency 'rake',      '~> 0.8.7'
+  s.add_development_dependency 'rspec',     '~> 2.4.0'
+  s.add_development_dependency 'nokogiri',  '~> 1.4.4'
+  #s.add_development_dependency 'rr',        '~> 1.0.2'
 
   #s.rubyforge_project = 'list_for'
 
