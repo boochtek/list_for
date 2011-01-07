@@ -10,7 +10,7 @@ class User
   end
 end
 
-describe 'ListFor' do
+describe 'list_for' do
   context 'with an empty array' do
 
     before :all do
@@ -40,6 +40,39 @@ describe 'ListFor' do
 
     it 'should print a table' do
       @output.should have_tag('table')
+    end
+
+    it 'should add default class to the table' do
+      @output.should have_tag('table.list_for')
+    end
+
+    it 'should add object class name as CSS class to the table' do
+      @output.should have_tag('table.users')
+    end
+
+    it 'should add default id to the table' do
+      @output.should have_tag('table#user_list')
+    end
+
+    context 'with :class option' do
+      it 'should add the class to the table element' do
+        output = list_for(@users, :class => :common)
+        output.should have_tag('table.list_for.users.common')
+      end
+    end
+
+    context 'with :class option set to an array' do
+      it 'should add all the provided classes to the table element' do
+        output = list_for(@users, :class => [:common, :items])
+        output.should have_tag('table.list_for.users.common.items')
+      end
+    end
+
+    context 'with :id option' do
+      it 'should place the specified id on the table' do
+        output = list_for(@users, :id => 'my_list')
+        output.should have_tag('table#my_list')
+      end
     end
 
   end
